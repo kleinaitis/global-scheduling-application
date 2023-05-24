@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+    <TabPane prefHeight="749.0" prefWidth="1220.0" tabClosingPolicy="UNAVAILABLE">
+        <Tab closable="false" text="  Appointments  ">
+            <AnchorPane prefHeight="602.0" prefWidth="1201.0">
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="1201.0">
+                    <Label prefHeight="25.0" prefWidth="56.0" text="Sort By: ">
+                        <HBox.margin>
+                            <Insets left="25.0" />
+                        </HBox.margin>
+                    </Label>
+                    <RadioButton fx:id="currentWeekRBAppts" mnemonicParsing="false" onAction="#CurrentWeekAppointmentsRadioButtonSelected" prefHeight="25.0" prefWidth="104.0" text="Current Week">
+                        <HBox.margin>
+                            <Insets right="15.0" />
+                        </HBox.margin>
+                  <toggleGroup>
+                     <ToggleGroup fx:id="appointmentsToggleGroup" />
+                  </toggleGroup>
+                    </RadioButton>
+                    <RadioButton fx:id="currentMonthRBAppts" layoutX="10.0" layoutY="23.0" mnemonicParsing="false" onAction="#CurrentMonthAppointmentsRadioButtonSelected" prefHeight="25.0" prefWidth="105.0" text="Current Month" toggleGroup="$appointmentsToggleGroup">
+                        <HBox.margin>
+                            <Insets right="15.0" />
+                        </HBox.margin>
+                    </RadioButton>
+                    <RadioButton fx:id="allAppointmentsRB" layoutX="10.0" layoutY="23.0" mnemonicParsing="false" onAction="#AllAppointmentsRadioButtonSelected" prefHeight="25.0" prefWidth="121.0" selected="true" text="All Appointments" toggleGroup="$appointmentsToggleGroup">
+                        <HBox.margin>
+                            <Insets right="15.0" />
+                        </HBox.margin>
+                    </RadioButton>
+                </HBox>
+                <HBox layoutY="670.0" prefHeight="50.0" prefWidth="1201.0">
+                    <Button layoutX="910.0" layoutY="23.0" mnemonicParsing="false" onAction="#onActionAddAppointment" prefHeight="25.0" prefWidth="125.0" text="Add Appointment">
+                        <HBox.margin>
+                            <Insets left="25.0" right="10.0" top="12.5" />
+                        </HBox.margin>
+                    </Button>
+                    <Separator layoutX="1104.0" layoutY="10.0" orientation="VERTICAL" prefHeight="50.0" prefWidth="16.0" />
+                    <Button mnemonicParsing="false" onAction="#onActionEditAppointment" prefHeight="25.0" prefWidth="125.0" text="Edit Appointment">
+                        <HBox.margin>
+                            <Insets right="10.0" top="12.5" />
+                        </HBox.margin>
+                    </Button>
+                    <Separator orientation="VERTICAL" prefHeight="50.0" prefWidth="16.0">
+                        <HBox.margin>
+                            <Insets />
+                        </HBox.margin>
+                    </Separator>
+                    <Button mnemonicParsing="false" onAction="#onActionDeleteAppointment" prefHeight="25.0" prefWidth="125.0" text="Delete Appointment">
+                        <HBox.margin>
+                            <Insets left="10.0" right="10.0" top="12.5" />
+                        </HBox.margin>
+                    </Button>
+                    <Separator layoutX="321.0" layoutY="10.0" orientation="VERTICAL" prefHeight="50.0" prefWidth="16.0" />
+                    <Separator layoutX="482.0" layoutY="10.0" orientation="VERTICAL" prefHeight="50.0" prefWidth="16.0">
+                        <HBox.margin>
+                            <Insets left="565.0" />
+                        </HBox.margin>
+                    </Separator>
+                    <Button layoutX="347.0" layoutY="23.0" mnemonicParsing="false" onAction="#ExitApplicationButtonSelected" prefHeight="25.0" prefWidth="125.0" text="Exit Application">
+                        <HBox.margin>
+                            <Insets top="12.5" />
+                        </HBox.margin>
+                    </Button>
+                </HBox>
+                <HBox layoutX="-1.0" layoutY="50.0" prefHeight="620.0" prefWidth="1226.0">
+                    <TableView fx:id="allAppointmentsTableView" prefHeight="620.0" prefWidth="1250.0">
+                        <columns>
+                            <TableColumn fx:id="apptIDCol" editable="false" prefWidth="102.75" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="Appointment ID" />
+                            <TableColumn fx:id="titleCol" editable="false" prefWidth="102.75" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="Title" />
+                            <TableColumn fx:id="descriptionCol" editable="false" prefWidth="102.75" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="Description" />
+                            <TableColumn fx:id="locationCol" editable="false" prefWidth="102.75" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="Location" />
+                            <TableColumn fx:id="contactCol" editable="false" prefWidth="102.75" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="Contact" />
+                            <TableColumn fx:id="typeCol" editable="false" prefWidth="102.75" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="Type" />
+                            <TableColumn fx:id="startDateCol" editable="false" prefWidth="200.0" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="Start Date/Time" />
+                            <TableColumn fx:id="endDateCol" editable="false" prefWidth="200.0" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="End Date/Time" />
+                            <TableColumn fx:id="apptCustomerIDCol" editable="false" prefWidth="103.0" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="Customer ID" />
+                            <TableColumn fx:id="userIDCol" editable="false" prefWidth="103.0" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="User ID" />
+                        </columns>
+                    </TableView>
+                </HBox>
+            </AnchorPane>
+        </Tab>
+        <Tab closable="false" text="  Customers  ">
+            <AnchorPane prefHeight="720.0" prefWidth="1200.0">
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="1201.0">
+                    <Label prefHeight="25.0" prefWidth="56.0" text="Sort By:">
+                        <HBox.margin>
+                            <Insets left="25.0" />
+                        </HBox.margin>
+                    </Label>
+                    <RadioButton fx:id="canadaRadioButton" mnemonicParsing="false" onAction="#onActionCanadaRadioButton" prefHeight="25.0" prefWidth="64.0" text="Canada" textAlignment="CENTER">
+                  <HBox.margin>
+                     <Insets right="15.0" />
+                  </HBox.margin>
+                  <toggleGroup>
+                     <ToggleGroup fx:id="countryToggleGroup" />
+                  </toggleGroup>
+                    </RadioButton>
+                    <RadioButton fx:id="usRadioButton" layoutX="10.0" layoutY="23.0" mnemonicParsing="false" onAction="#onActionUSRadioButton" prefHeight="25.0" prefWidth="93.0" text="United States" toggleGroup="$countryToggleGroup">
+                        <HBox.margin>
+                            <Insets right="15.0" />
+                        </HBox.margin>
+                    </RadioButton>
+                    <RadioButton fx:id="ukRadioButton" layoutX="10.0" layoutY="23.0" mnemonicParsing="false" onAction="#onActionUKRadioButton" prefHeight="25.0" prefWidth="110.0" text="United Kingdom" toggleGroup="$countryToggleGroup">
+                        <HBox.margin>
+                            <Insets right="15.0" />
+                        </HBox.margin>
+                    </RadioButton>
+               <RadioButton fx:id="allCustomersRadioButton" mnemonicParsing="false" onAction="#onActionAllCustomersRadioButton" prefHeight="25.0" prefWidth="110.0" selected="true" text="All Customers" toggleGroup="$countryToggleGroup">
+                  <HBox.margin>
+                     <Insets />
+                  </HBox.margin>
+               </RadioButton>
+                </HBox>
+                <HBox layoutY="670.0" prefHeight="50.0" prefWidth="1201.0">
+                    <Button layoutX="910.0" layoutY="23.0" mnemonicParsing="false" onAction="#onActionAddCustomer" prefHeight="25.0" prefWidth="125.0" text="Add Customer">
+                        <HBox.margin>
+                            <Insets left="25.0" right="10.0" top="12.5" />
+                        </HBox.margin>
+                    </Button>
+                    <Separator layoutX="1104.0" layoutY="10.0" orientation="VERTICAL" prefHeight="50.0" prefWidth="16.0" />
+                    <Button mnemonicParsing="false" onAction="#onActionEditCustomer" prefHeight="25.0" prefWidth="125.0" text="Edit Customer">
+                        <HBox.margin>
+                            <Insets right="10.0" top="12.5" />
+                        </HBox.margin>
+                    </Button>
+                    <Separator orientation="VERTICAL" prefHeight="50.0" prefWidth="16.0">
+                        <HBox.margin>
+                            <Insets />
+                        </HBox.margin>
+                    </Separator>
+                    <Button mnemonicParsing="false" onAction="#onActionDeleteCustomer" prefHeight="25.0" prefWidth="125.0" text="Delete Customer">
+                        <HBox.margin>
+                            <Insets left="10.0" right="10.0" top="12.5" />
+                        </HBox.margin>
+                    </Button>
+                    <Separator layoutX="321.0" layoutY="10.0" orientation="VERTICAL" prefHeight="50.0" prefWidth="16.0" />
+                    <Separator layoutX="482.0" layoutY="10.0" orientation="VERTICAL" prefHeight="50.0" prefWidth="16.0">
+                        <HBox.margin>
+                            <Insets left="565.0" />
+                        </HBox.margin>
+                    </Separator>
+                    <Button layoutX="347.0" layoutY="23.0" mnemonicParsing="false" onAction="#ExitApplicationButtonSelected" prefHeight="25.0" prefWidth="125.0" text="Exit Application">
+                        <HBox.margin>
+                            <Insets top="12.5" />
+                        </HBox.margin>
+                    </Button>
+                </HBox>
+                <HBox fillHeight="false" layoutX="-1.0" layoutY="50.0" prefHeight="620.0" prefWidth="1226.0">
+                    <TableView fx:id="allCustomersTableView" prefHeight="620.0" prefWidth="1248.0" style="-fx-alignment: CENTER;">
+                        <columns>
+                            <TableColumn fx:id="customerIDColumn" editable="false" prefWidth="174.57" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="Customer ID" />
+                            <TableColumn fx:id="customerNameColumn" editable="false" prefWidth="174.57" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="Name" />
+                            <TableColumn fx:id="customerPhoneColumn" editable="false" prefWidth="174.57" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="Phone Number" />
+                            <TableColumn fx:id="customerAddressColumn" editable="false" prefWidth="174.57" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="Street Address" />
+                            <TableColumn fx:id="customerDivisionColumn" editable="false" prefWidth="174.57" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="State/Province/Division" />
+                            <TableColumn fx:id="customerPostalColumn" editable="false" prefWidth="174.57" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="Postal Code" />
+                     <TableColumn fx:id="customerCountryColumn" editable="false" prefWidth="174.57" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="Country" />
+                        </columns>
+                    </TableView>
+                </HBox>
+            </AnchorPane>
+        </Tab>
+        <Tab closable="false" text="  Reports  ">
+            <AnchorPane prefWidth="1200.0">
+                <HBox alignment="CENTER_LEFT" fillHeight="false" layoutX="1.0" prefHeight="50.0" prefWidth="1220.0">
+                    <Label prefHeight="25.0" prefWidth="88.0" text="Select Report:">
+                        <HBox.margin>
+                            <Insets left="25.0" />
+                        </HBox.margin>
+                    </Label>
+               <RadioButton fx:id="appointmentByMonthRadioButton" mnemonicParsing="false" onAction="#AppointmentsByMonthRadioButtonSelected" prefHeight="25.0" text="Appts By Month">
+                  <HBox.margin>
+                     <Insets right="15.0" />
+                  </HBox.margin>
+                  <toggleGroup>
+                     <ToggleGroup fx:id="reportsToggleGroup" />
+                  </toggleGroup></RadioButton>
+               <RadioButton fx:id="appointmentsScheduleRadioButton" layoutX="281.0" layoutY="23.0" mnemonicParsing="false" onAction="#AppointmentScheduleRadioButtonSelected" prefHeight="25.0" text="Appts Schedule (Contacts)" toggleGroup="$reportsToggleGroup">
+                  <HBox.margin>
+                     <Insets right="15.0" />
+                  </HBox.margin>
+               </RadioButton>
+               <RadioButton fx:id="appointmentsByCountryRadioButton" layoutX="140.0" layoutY="10.0" mnemonicParsing="false" onAction="#AppointmentsByCountryRadioButtonSelected" prefHeight="25.0" text="Appts By Country" toggleGroup="$reportsToggleGroup">
+                  <HBox.margin>
+                     <Insets right="15.0" />
+                  </HBox.margin></RadioButton>
+               <RadioButton fx:id="appointmentByTypeRadioButton" layoutX="140.0" layoutY="10.0" mnemonicParsing="false" onAction="#AppointmentsByTypeRadioButtonSelected" prefHeight="25.0" text="Appts By Type" toggleGroup="$reportsToggleGroup">
+                  <HBox.margin>
+                     <Insets right="15.0" />
+                  </HBox.margin></RadioButton>
+               <ComboBox fx:id="reportsComboBox" onAction="#UpdateReportsComboBox" prefWidth="150.0" />
+               <Label fx:id="reportResultLabel" prefHeight="17.0" prefWidth="150.0">
+                  <HBox.margin>
+                     <Insets left="15.0" />
+                  </HBox.margin></Label>
+                </HBox>
+                <HBox layoutY="670.0" prefHeight="50.0" prefWidth="1201.0">
+                    <Separator layoutX="482.0" layoutY="10.0" orientation="VERTICAL" prefHeight="50.0" prefWidth="16.0">
+                        <HBox.margin>
+                            <Insets left="1053.0" />
+                        </HBox.margin>
+                    </Separator>
+                    <Button layoutX="347.0" layoutY="23.0" mnemonicParsing="false" onAction="#ExitApplicationButtonSelected" prefHeight="25.0" prefWidth="125.0" text="Exit Application">
+                        <HBox.margin>
+                            <Insets top="12.5" />
+                        </HBox.margin>
+                    </Button>
+                </HBox>
+                <HBox layoutX="-1.0" layoutY="50.0" prefHeight="620.0" prefWidth="1227.0">
+                    <TableView fx:id="allReportsTableView" prefHeight="620.0" prefWidth="1225.0">
+                        <columns>
+                            <TableColumn fx:id="reportApptIDCol" editable="false" prefWidth="175.0" sortable="false" style="-fx-alignment: CENTER;" text="Appointment ID" />
+                            <TableColumn fx:id="reportTitleCol" editable="false" prefWidth="175.0" sortable="false" style="-fx-alignment: CENTER;" text="Title" />
+                     <TableColumn fx:id="reportTypeCol" editable="false" prefWidth="175.0" sortable="false" style="-fx-alignment: CENTER;" text="Type" />
+                     <TableColumn fx:id="reportDescriptionCol" editable="false" prefWidth="175.0" sortable="false" style="-fx-alignment: CENTER;" text="Description" />
+                     <TableColumn fx:id="reportStartDateCol" editable="false" prefWidth="175.0" sortable="false" style="-fx-alignment: CENTER;" text="Start Date/Time" />
+                     <TableColumn fx:id="reportEndDateCol" editable="false" prefWidth="175.0" sortable="false" style="-fx-alignment: CENTER;" text="End Date/Time" />
+                     <TableColumn fx:id="reportApptCustomerIDCol" editable="false" prefWidth="175.0" sortable="false" style="-fx-alignment: CENTER;" text="Customer ID" />
+                        </columns>
+                    </TableView>
+                </HBox>
+            </AnchorPane>
+        </Tab>
+    </TabPane>
+</AnchorPane>
