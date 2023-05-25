@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="666.0" prefWidth="511.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddAppointmentController">
+    <TabPane prefHeight="749.0" prefWidth="546.0" tabClosingPolicy="UNAVAILABLE">
+        <Tab closable="false" text="  Appointments  ">
+            <AnchorPane prefHeight="727.0" prefWidth="516.0">
+                <HBox layoutX="-1.0" layoutY="670.0" prefHeight="50.0" prefWidth="546.0" spacing="25.0">
+                    <Button layoutX="910.0" layoutY="23.0" mnemonicParsing="false" onAction="#onActionSaveAppointment" prefHeight="25.0" prefWidth="125.0" text="Save Appointment">
+                        <HBox.margin>
+                            <Insets left="125.0" right="10.0" top="12.5" />
+                        </HBox.margin>
+                    </Button>
+                    <Button mnemonicParsing="false" onAction="#onActionCancel" prefHeight="25.0" prefWidth="125.0" text="Cancel">
+                        <HBox.margin>
+                            <Insets right="10.0" top="12.5" />
+                        </HBox.margin>
+                    </Button>
+                </HBox>
+                <HBox alignment="CENTER" layoutY="47.0" prefHeight="623.0" prefWidth="546.0">
+                    <GridPane prefHeight="575.0" prefWidth="378.0">
+                        <columnConstraints>
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="215.0" minWidth="10.0" prefWidth="122.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="318.0" minWidth="10.0" prefWidth="318.0" />
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        </rowConstraints>
+                        <HBox.margin>
+                            <Insets />
+                        </HBox.margin>
+                        <Label text="Appt. ID" />
+                        <Label text="Title" textAlignment="CENTER" GridPane.rowIndex="1" />
+                        <Label text="Description" GridPane.rowIndex="2" />
+                        <Label text="Location" GridPane.rowIndex="3" />
+                        <Label text="Contact" GridPane.rowIndex="4" />
+                        <Label text="Type" GridPane.rowIndex="5" />
+                        <Label text="Start Time" GridPane.rowIndex="6" />
+                        <Label text="Start Date" GridPane.rowIndex="7" />
+                        <Label text="End Time" GridPane.rowIndex="8" />
+                        <Label text="End Date" GridPane.rowIndex="9" />
+                        <Label text="Customer" GridPane.rowIndex="10" />
+                        <Label text="User" GridPane.rowIndex="11" />
+                        <TextField disable="true" editable="false" prefWidth="151.0" promptText="Disabled - Auto Generated" GridPane.columnIndex="1" />
+                        <TextField fx:id="appointmentTitleText" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="appointmentDescriptionText" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="appointmentLocationText" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="appointmentTypeText" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <DatePicker fx:id="startDatePicker" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <DatePicker fx:id="endDatePicker" editable="false" layoutX="101.0" layoutY="388.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <ComboBox fx:id="startTimeComboBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <ComboBox fx:id="endTimeComboBox" layoutX="101.0" layoutY="336.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <ComboBox fx:id="contactComboBox" layoutX="101.0" layoutY="336.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <ComboBox fx:id="customerComboBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                  <ComboBox fx:id="userIDComboBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                    </GridPane>
+                </HBox>
+                <HBox alignment="CENTER" layoutY="-1.0" prefHeight="50.0" prefWidth="546.0">
+                    <Label text="Add Appointment">
+                        <HBox.margin>
+                            <Insets top="16.5" />
+                        </HBox.margin>
+                        <font>
+                            <Font name="System Bold" size="19.0" />
+                        </font>
+                    </Label>
+                </HBox>
+            </AnchorPane>
+        </Tab>
+        <Tab closable="false" disable="true" text="  Customers  ">
+            <AnchorPane prefHeight="720.0" prefWidth="1200.0">
+                <HBox prefHeight="50.0" prefWidth="1201.0">
+                    <Label prefHeight="25.0" prefWidth="56.0" text="Sort By: ">
+                        <HBox.margin>
+                            <Insets left="25.0" top="15.0" />
+                        </HBox.margin>
+                    </Label>
+                    <RadioButton mnemonicParsing="false" prefHeight="25.0" prefWidth="104.0" text="Current Week">
+                        <HBox.margin>
+                            <Insets left="15.0" right="15.0" top="15.0" />
+                        </HBox.margin>
+                    </RadioButton>
+                    <RadioButton layoutX="10.0" layoutY="23.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="105.0" text="Current Month">
+                        <HBox.margin>
+                            <Insets right="15.0" top="15.0" />
+                        </HBox.margin>
+                    </RadioButton>
+                    <RadioButton layoutX="10.0" layoutY="23.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="121.0" text="All Appointments">
+                        <HBox.margin>
+                            <Insets right="15.0" top="15.0" />
+                        </HBox.margin>
+                    </RadioButton>
+                    <Label prefHeight="20.0" prefWidth="50.0" text="Search">
+                        <HBox.margin>
+                            <Insets left="525.0" top="15.0" />
+                        </HBox.margin>
+                    </Label>
+                    <TextField>
+                        <HBox.margin>
+                            <Insets top="12.5" />
+                        </HBox.margin>
+                    </TextField>
+                </HBox>
+                <HBox layoutY="670.0" prefHeight="50.0" prefWidth="1201.0">
+                    <Button layoutX="910.0" layoutY="23.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Add Customer">
+                        <HBox.margin>
+                            <Insets left="25.0" right="10.0" top="12.5" />
+                        </HBox.margin>
+                    </Button>
+                    <Separator layoutX="1104.0" layoutY="10.0" orientation="VERTICAL" prefHeight="50.0" prefWidth="16.0" />
+                    <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Edit Customer">
+                        <HBox.margin>
+                            <Insets right="10.0" top="12.5" />
+                        </HBox.margin>
+                    </Button>
+                    <Separator orientation="VERTICAL" prefHeight="50.0" prefWidth="16.0">
+                        <HBox.margin>
+                            <Insets />
+                        </HBox.margin>
+                    </Separator>
+                    <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Delete Customer">
+                        <HBox.margin>
+                            <Insets left="10.0" right="10.0" top="12.5" />
+                        </HBox.margin>
+                    </Button>
+                    <Separator layoutX="321.0" layoutY="10.0" orientation="VERTICAL" prefHeight="50.0" prefWidth="16.0" />
+                    <Separator layoutX="482.0" layoutY="10.0" orientation="VERTICAL" prefHeight="50.0" prefWidth="16.0">
+                        <HBox.margin>
+                            <Insets left="565.0" />
+                        </HBox.margin>
+                    </Separator>
+                    <Button layoutX="347.0" layoutY="23.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Exit Application">
+                        <HBox.margin>
+                            <Insets top="12.5" />
+                        </HBox.margin>
+                    </Button>
+                </HBox>
+                <HBox layoutX="-1.0" layoutY="50.0" prefHeight="620.0" prefWidth="1202.0">
+                    <TableView prefHeight="626.0" prefWidth="1202.0">
+                        <columns>
+                            <TableColumn prefWidth="171.4" text="Customer ID" />
+                            <TableColumn prefWidth="171.4" text="Name" />
+                            <TableColumn prefWidth="171.4" text="Phone Number" />
+                            <TableColumn prefWidth="171.4" text="Street Address" />
+                            <TableColumn prefWidth="171.4" text="State/Province" />
+                            <TableColumn prefWidth="171.4" text="Postal Code" />
+                            <TableColumn prefWidth="171.4" text="Country" />
+                        </columns>
+                    </TableView>
+                </HBox>
+            </AnchorPane>
+        </Tab>
+        <Tab closable="false" disable="true" text="  Reports  ">
+            <AnchorPane prefHeight="720.0" prefWidth="1200.0">
+                <HBox prefHeight="50.0" prefWidth="1201.0">
+                    <Label prefHeight="25.0" prefWidth="80.0" text="Select Report:">
+                        <HBox.margin>
+                            <Insets left="25.0" right="25.0" top="15.0" />
+                        </HBox.margin>
+                    </Label>
+                    <ChoiceBox prefWidth="150.0">
+                        <HBox.margin>
+                            <Insets top="12.5" />
+                        </HBox.margin>
+                    </ChoiceBox>
+                </HBox>
+                <HBox layoutY="670.0" prefHeight="50.0" prefWidth="1201.0">
+                    <Separator layoutX="482.0" layoutY="10.0" orientation="VERTICAL" prefHeight="50.0" prefWidth="16.0">
+                        <HBox.margin>
+                            <Insets left="1053.0" />
+                        </HBox.margin>
+                    </Separator>
+                    <Button layoutX="347.0" layoutY="23.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Exit Application">
+                        <HBox.margin>
+                            <Insets top="12.5" />
+                        </HBox.margin>
+                    </Button>
+                </HBox>
+                <HBox layoutX="-1.0" layoutY="50.0" prefHeight="620.0" prefWidth="1202.0">
+                    <TableView prefHeight="626.0" prefWidth="1202.0">
+                        <columns>
+                            <TableColumn prefWidth="100.0" text="Report Name" />
+                            <TableColumn prefWidth="100.0" text="Description" />
+                            <TableColumn prefWidth="100.0" text="Last Generated" />
+                            <TableColumn prefWidth="100.0" text="Download" />
+                        </columns>
+                    </TableView>
+                </HBox>
+            </AnchorPane>
+        </Tab>
+    </TabPane>
+</AnchorPane>
