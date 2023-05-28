@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #DDDDDD;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginScreenController">
+    <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="1.0">
+        <padding>
+            <Insets left="150.0" right="150.0" />
+        </padding>
+        <Label fx:id="titleTextLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" prefWidth="300.0" text="Scheduler Application Login">
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+      <Separator prefHeight="17.0" prefWidth="300.0">
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin></Separator>
+        <HBox alignment="CENTER" prefHeight="17.0" prefWidth="495.0" spacing="25.0">
+            <VBox.margin>
+                <Insets bottom="15.0" />
+            </VBox.margin>
+            <Label fx:id="languageLabel" text="Language:">
+                <HBox.margin>
+                    <Insets />
+                </HBox.margin>
+            </Label>
+            <RadioButton fx:id="englishRadioButton" mnemonicParsing="false" text="English">
+                <HBox.margin>
+                    <Insets />
+                </HBox.margin>
+                <toggleGroup>
+                    <ToggleGroup fx:id="languageTG" />
+                </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="frenchRadioButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="French" toggleGroup="$languageTG">
+                <HBox.margin>
+                    <Insets />
+                </HBox.margin>
+            </RadioButton>
+        </HBox>
+        <GridPane alignment="CENTER" prefWidth="277.0" vgap="25.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="97.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="500.0" minWidth="10.0" prefWidth="203.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <padding>
+                <Insets bottom="15.0" top="15.0" />
+            </padding>
+            <Label fx:id="usernameLabel" alignment="CENTER" prefHeight="17.0" prefWidth="103.0" text="Username" textAlignment="CENTER" />
+            <Label fx:id="passwordLabel" alignment="CENTER" prefHeight="17.0" prefWidth="131.0" text="Password" GridPane.rowIndex="1" />
+            <Label fx:id="locationLabel" alignment="CENTER" prefHeight="17.0" prefWidth="168.0" text="Location" GridPane.rowIndex="2" />
+            <TextField fx:id="usernameText" alignment="CENTER" GridPane.columnIndex="1">
+                <padding>
+                    <Insets bottom="10.0" top="10.0" />
+                </padding>
+            </TextField>
+            <TextField fx:id="passwordText" alignment="CENTER" prefHeight="37.0" prefWidth="160.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <GridPane.margin>
+                    <Insets />
+                </GridPane.margin>
+                <padding>
+                    <Insets bottom="10.0" top="10.0" />
+                </padding>
+            </TextField>
+            <TextField fx:id="timeZoneText" alignment="CENTER" editable="false" prefWidth="506.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <padding>
+                    <Insets bottom="10.0" top="10.0" />
+                </padding>
+            </TextField>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+        </GridPane>
+        <HBox alignment="TOP_CENTER" prefHeight="22.0" prefWidth="420.0" spacing="50.0">
+            <VBox.margin>
+                <Insets bottom="15.0" top="15.0" />
+            </VBox.margin>
+            <effect>
+                <InnerShadow blurType="ONE_PASS_BOX" choke="0.33" height="9.28" radius="4.0175" width="8.79" />
+            </effect>
+            <Button fx:id="loginButton" mnemonicParsing="false" onAction="#onActionLogin" prefHeight="25.0" prefWidth="100.0" text="Login">
+                <HBox.margin>
+                    <Insets />
+                </HBox.margin>
+            </Button>
+            <Button fx:id="exitButton" mnemonicParsing="false" onAction="#onActionExit" prefHeight="25.0" prefWidth="100.0" text="Exit" />
+        </HBox>
+    </VBox>
+</AnchorPane>
