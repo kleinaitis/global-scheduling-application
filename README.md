@@ -1,10 +1,5 @@
 
 <a name="readme-top"></a>
-<br />
-<div align="center">
-  <a href="https://github.com/kleinaitis/global-scheduling-application">
-    <img width=50% src="logo-no-background.png" alt="Logo">
-  </a>
 
   <p align="center">
 The "Global Scheduling Application" is a sophisticated, Java-based desktop application designed with a user-friendly graphical interface for efficient appointment scheduling. Tailored for a mock software company operating internationally, this powerful tool seamlessly manages scheduling complexities for customers across multiple languages and diverse global time zones. With a robust backend powered by a MySQL server integration, it ensures secure and reliable data storage, making it ideal for any company operating internationally.    <br />
